@@ -10,6 +10,18 @@ npm run dev
 yarn dev
 ```
 
+## Configuration
+
+1. [Create a Firebase project](https://console.firebase.google.com/u/0/) and add a new app to it.
+2. Create a `.env.local` file and copy the contents of `.env.local.example` into it:
+
+```bash
+cp .env.local.example .env.local
+```
+
+3. Set each variable on `.env.local` with your Firebase Configuration (found in "Project settings").
+
+4. If you want to check the SSR page, get your account credentials from the Firebase console at _Project settings > Service accounts_, where you can click on _Generate new private key_ and download the credentials as a json file. Then set `FIREBASE_CLIENT_EMAIL` and `FIREBASE_PRIVATE_KEY` in `.env.local`
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
