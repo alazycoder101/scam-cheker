@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import Link from 'next/link'
-import styles from '../styles/Home.module.css'
+import Image from 'next/image'
+import styles from '../../styles/Home.module.css'
 
 export default function Home() {
   return (
@@ -11,25 +11,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div>
-        <ul>
-            <li>
-              <Link href="/">
-                <a>Home</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/reports/new">
-                <a>Report Post</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/about">
-                <a>About Us</a>
-              </Link>
-            </li>
-        </ul>
-      </div>
       <main className={styles.main}>
         <h3 className={styles.title}>
           Welcome to Scam Checker!
@@ -38,6 +19,21 @@ export default function Home() {
         <p className={styles.description}>
           Please report the scam
         </p>
+        <form action="/reports" method="POST">
+        <ul>
+        <li>
+        <label for="phone_no">Phone No</label>
+        <input id="phone_no" type="text" autoComplete="phone_no" required />
+        </li>
+        <li>
+        <label for="content">Content</label>
+        <textarea id="content"/>
+        </li>
+        <li>
+        <button type="submit">Register</button>
+        </li>
+        </ul>
+        </form>
       </main>
     </div>
   )
